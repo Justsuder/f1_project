@@ -24,15 +24,15 @@
 | `pit_stops` | Detailní informace o zastávkách v boxech, číslo kola, typ obutých pneumatik (`tire_type`) a celková délka zastávky v sekundách. |
 
 ## ER diagram
-Teams (1) – (N) Drivers
-Teams (1) – (N) Formulas
-Circuits (1) – (N) Races
-Races (1) – (N) RaceResults
-Drivers (1) – (N) RaceResults
-Races (1) – (N) PitStops
-Drivers (1) – (N) PitStops
-Drivers (M) – (N) Races přes RaceResults
-Drivers (M) – (N) Races přes PitStops
+Teams (1) – (N) Drivers\
+Teams (1) – (N) Formulas\
+Circuits (1) – (N) Races\
+Races (1) – (N) RaceResults\
+Drivers (1) – (N) RaceResults\
+Races (1) – (N) PitStops\
+Drivers (1) – (N) PitStops\
+Drivers (M) – (N) Races přes RaceResults\
+Drivers (M) – (N) Races přes PitStops\
 
 <img width="658" height="605" alt="image" src="https://github.com/user-attachments/assets/95a9535f-b5fb-4a4b-8607-3ee603c19671" />
 
