@@ -13,6 +13,15 @@
 10. databáze bude  pro ucelené dotazování daty ze světa Formule 1 na jednom místě.
 
 ## popis tabulek
+| Tabulka | Účel a důležité údaje |
+| ------- | --------------------- |
+| `teams` | Informace o závodních týmech, jejich jméno, země původu, šéf týmu, počet pohárů konstruktérů a příznak aktuální aktivity (`is_active`). |
+| `drivers` | Závodní jezdci, jejich jméno, příjmení, startovní číslo, datum narození, národnost, počet titulů a příznak, zda stále aktivně závodí (`is_active`). |
+| `formulas` | Konkrétní modely monopostů nasazené týmy v dané sezóně a jejich dodavatelé motorů. |
+| `circuits` | Fyzické závodní okruhy, jejich název, stát, ve kterém se nacházejí, a délka tratě v kilometrech. |
+| `races` | Konkrétní vypsané závody konané na okruzích, jejich název, ročník sezóny a přesné datum konání. |
+| `race_results` | Výsledek jezdce v konkrétním závodě, startovní a cílová pozice, čas a příznak klasifikace v cíli (`is_classified`). Jedinečná kombinace závodu a jezdce brání duplicitnímu uložení výsledku. |
+| `pit_stops` | Detailní informace o zastávkách v boxech, číslo kola, typ obutých pneumatik (`tire_type`) a celková délka zastávky v sekundách. |
 
 ## ER diagram
 Teams (1) – (N) Drivers
