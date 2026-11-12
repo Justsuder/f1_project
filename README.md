@@ -25,7 +25,8 @@ Drivers (1) – (N) PitStops
 Drivers (M) – (N) Races přes RaceResults
 Drivers (M) – (N) Races přes PitStops
 
-<img width="562" height="475" alt="image" src="https://github.com/user-attachments/assets/a25c9b62-1c8d-434a-a3a1-f079353ef181" />
+<img width="658" height="605" alt="image" src="https://github.com/user-attachments/assets/95a9535f-b5fb-4a4b-8607-3ee603c19671" />
+
 
 
 ## ukázková data a dotaz
