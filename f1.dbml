@@ -1,0 +1,88 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+Project f1 {
+  database_type: 'PostgreSQL'
+  Note: 'Databázový model pro evidenci závodů, týmů, jezdců a podrobných výsledků Formule 1.'
+}
+
+enum tire_type {
+  soft
+  medium
+  hard
+  intermediate
+  wet
+}
+
+Table drivers {
+  driver_id integer [pk, increment]
+  team_id integer [not null, ref:> teams.team_id]
+  first_name varchar(30) [not null]
+  last_name varchar(30) [not null]
+  number integer [not null]
+  birthday date [not null]
+  nationality string [not null]
+  championship_wins integer
+  is_active boolean [not null, default: true]
+}
+
+Table formulas {
+  formula_id integer [pk, increment]
+  team_id integer [not null, ref:> teams.team_id]
+  model_name varchar(30) [not null]
+  engine_supplier varchar(30) [not null]
+}
+
+Table teams {
+  team_id integer [pk, increment]
+  name varchar(30) [not null]
+  base_country varchar(30) [not null]
+  principal varchar(30) [not null]
+  constructor_wins integer
+  is_active boolean [not null, default: true]
+}
+
+Table circuits {
+  circuit_id integer [pk, increment]
+  name varchar(30) [not null]
+  country varchar(30) [not null]
+  length_km float
+}
+
+Table races {
+  race_id integer [pk, increment]
+  circuit_id integer [not null, ref:> circuits.circuit_id]
+  name varchar(30) [not null]
+  season_year integer 
+  race_date date
+}
+
+Table pit_stops {
+  pit_stop_id integer [primary key, increment]
+  race_id integer [not null, ref:> races.race_id]
+  driver_id integer [not null, ref:> drivers.driver_id]
+  lap_number int
+  tire_type tire_type
+  duration_seconds float
+
+  Indexes {
+    driver_id
+    race_id
+  }
+}
+
+Table race_results {
+  result_id integer [pk, increment]
+  race_id integer [not null, ref:> races.race_id]
+  driver_id integer [not null, ref:> drivers.driver_id]
+  starting_position integer
+  finishing_position integer
+  lap_number integer
+  duration_seconds float
+  is_classified boolean [not null, default: true, note: 'True = jezdec byl klasifikován v cíli (DNF = false).']
+
+  Indexes {
+    (race_id, driver_id) [unique]
+    race_id
+    driver_id
+  }
+}
