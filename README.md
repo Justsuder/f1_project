@@ -39,6 +39,8 @@ Drivers (M) – (N) Races přes PitStops\
 
 
 ## ukázková data a dotaz
+1. Analýza spolehlivosti týmů a efektivity zastávek v boxech
+2. součet získaných bodů a odstaveným monopostů pro jednotlivé týmy
 
 
 
